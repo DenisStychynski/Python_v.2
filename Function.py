@@ -1,13 +1,13 @@
-import Ui
+import Trait
 import Operation
 import Note
 
 
-number = 6  # сколько знаков МИНИМУМ может быть в тексте заметки
+number = 7  # сколько знаков МИНИМУМ может быть в тексте заметки
 
 
 def add():
-    note = Ui.create_note(number)
+    note = Trait.create_note(number)
     array = Operation.read_file()
     for notes in array:
         if Note.Note.get_id(note) == Note.Note.get_id(notes):
@@ -45,7 +45,7 @@ def id_edit_del_show(text):
         if id == Note.Note.get_id(notes):
             logic = False
             if text == 'edit':
-                note = Ui.create_note(number)
+                note = Trait.create_note(number)
                 Note.Note.set_title(notes, note.get_title())
                 Note.Note.set_body(notes, note.get_body())
                 Note.Note.set_date(notes)
